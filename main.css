@@ -14,16 +14,16 @@ main {
 }
 
 header {
-    background-color: rgb(196, 196, 22);
-    color: rgb(245, 128, 128);
+    background-color: rgb(91, 17, 137);
+    color: rgb(162, 86, 237);
     font-family: Arial;
     padding: 5px;
     font-size: 12pt; 
    }
 
 footer {
-    background-color: rgb(196, 196, 22);
-    color: rgb(245, 128, 128);
+    background-color: rgb(91, 17, 137);
+    color: rgb(162, 86, 237);
     font-family: Arial;
     padding: 5px;
     font-size: 12pt; 
