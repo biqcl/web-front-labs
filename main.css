@@ -14,16 +14,16 @@ main {
 }
 
 header {
-    background-color: yellow;
-    color: rgb(245, 128, 245);
+    background-color: rgb(196, 196, 22);
+    color: rgb(245, 128, 128);
     font-family: Arial;
     padding: 5px;
     font-size: 12pt; 
    }
 
 footer {
-    background-color: yellow;
-    color: rgb(245, 128, 245);
+    background-color: rgb(196, 196, 22);
+    color: rgb(245, 128, 128);
     font-family: Arial;
     padding: 5px;
     font-size: 12pt; 
@@ -33,5 +33,5 @@ footer {
 
 a {
     text-decoration: none;
-    color: rgb(245, 128, 245);   
+    color: rgb(0, 122, 91);   
 }
