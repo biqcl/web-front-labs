@@ -58,3 +58,15 @@ a:active {
     opacity: 0.5;
     transition: 0s;
 }
+
+div.menu {
+    border: 5px dashed;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    border: 5px solid;
+    background-color:  rgba(142, 160, 110, 0.153);
+}
