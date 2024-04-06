@@ -35,3 +35,23 @@ a {
     text-decoration: none;
     color: rgb(174, 194, 137);   
 }
+
+a:link {
+    text-decoration: none;
+    color: rgb(117, 130, 93);   
+}
+
+a:visited {
+    color:  rgb(174, 194, 137);
+}
+
+a:hover {
+    color: rgb(147, 166, 111); 
+    font-style: oblique;
+    text-shadow:  4px 3px 3px rgba(38, 109, 75, 0.142);
+}
+
+a:active {
+    color:rgb(205, 70, 98);
+    opacity: 0.5;
+}
