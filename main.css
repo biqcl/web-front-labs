@@ -38,7 +38,7 @@ footer {
 a {
     text-decoration: none;
     color: rgb(174, 194, 137);   
-    transition: 1s 0.5s;
+    /* transition: 1s 0.5s; */
 }
 
 a:link {
@@ -54,13 +54,13 @@ a:hover {
     color: rgb(147, 166, 111); 
     font-style: oblique;
     text-shadow:  4px 3px 3px rgba(38, 109, 75, 0.142);
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 
 a:active {
     color:rgb(205, 70, 98);
     opacity: 0.5;
-    transition: 0s;
+    /* transition: 0s; */
 }
 
 div.menu {
