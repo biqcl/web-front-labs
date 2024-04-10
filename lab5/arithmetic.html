@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function showSum() {
+                let a = 5154;
+                let b = 7891;
+                let result = a + b;
+                alert("Сумма " + a + " и " + b + " равна " + result);
+            }
+
+            function showAuthor() {
+                let author = "Автор страницы:\nБызова Мария Максимовна";
+                alert(author);
+            }
+
+            function hello() {
+                let hello = "Всем привет, вы попали на мою страничку!!\n\ni don't need love, i need go back to sleep.";
+                alert(hello);
+            }
+        </script>
+        <style>           
+            .message {
+                cursor: pointer;
+                display: inline-block;
+                width: 300px;
+                border: 5px dashed; 
+                border-radius: 10px; 
+                padding: 5px;
+                background-color: rgba(142, 160, 110, 0.089);
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header onclick="showAuthor()" style="cursor: pointer;">
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main style="text-align: center;" >
+            <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        </main>
+
+        <footer ondblclick="hello()">
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
