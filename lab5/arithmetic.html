@@ -58,6 +58,14 @@
                 let hello = 'Всем привет, вы попали на мою страничку!!\n\nХорошего дня!';
                 alert(hello);
             }
+
+            function changeOutput(buttonNum, backColor, textColor, border) {
+                let output = document.getElementById('output');
+                output.innerHTML = 'Нажата кнопка ' + buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.border = border;
+            }
         </script>
         <style>           
             .message {
@@ -70,6 +78,15 @@
                 margin: 10px;
                 background-color: rgba(142, 160, 110, 0.089);
                 text-align: center;
+            }
+
+            #output {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;              
+                border-radius: 10px;
+                margin: 10px;  
+                line-height: 40px;            
             }
         </style>
     </head>
@@ -84,10 +101,19 @@
             <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
 
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
-            <div class="message" onclick="showDiff()">Найти разность чисел</div>
+            <div class="message" onclick="showDiff()">Найти разность чисел</div><br>
             <div class="message" onclick="showMult()">Найти произведение чисел</div>
-            <div class="message" onclick="showDiv()">Найти частное чисел</div>
+            <div class="message" onclick="showDiv()">Найти частное чисел</div><br>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, '#f9e5d7', '#e7926c', '5px dotted')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, '#dbc5c5', '#928383', '5px dashed')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#e1e9b7', '#f96161', '5px solid')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#ffc9dc', '#ff80a0', '7px double')">
+            </div>
+
+            <div id="output"></div>
         </main>
 
         <footer ondblclick="hello()">
