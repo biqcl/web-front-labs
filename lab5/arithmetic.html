@@ -16,16 +16,46 @@
                 let a = parseInt(inputA.value);
                 let b = parseInt(inputB.value);
                 let result = a + b;
-                alert("Сумма " + a + " и " + b + " равна " + result);
+                alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+            }
+
+            function showDiff() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a - b;
+                alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+            }
+
+            function showMult() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a * b;
+                alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+            }
+
+            function showDiv() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a / b;
+                alert('Частное ' + a + ' и ' + b + ' равно ' + result);
             }
 
             function showAuthor() {
-                let author = "Автор страницы:\nБызова Мария Максимовна";
+                let author = 'Автор страницы:\nБызова Мария Максимовна';
                 alert(author);
             }
 
             function hello() {
-                let hello = "Всем привет, вы попали на мою страничку!!\n\nХорошего дня!";
+                let hello = 'Всем привет, вы попали на мою страничку!!\n\nХорошего дня!';
                 alert(hello);
             }
         </script>
@@ -37,6 +67,7 @@
                 border: 5px dashed; 
                 border-radius: 10px; 
                 padding: 5px;
+                margin: 10px;
                 background-color: rgba(142, 160, 110, 0.089);
                 text-align: center;
             }
@@ -53,6 +84,9 @@
             <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
 
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
+            <div class="message" onclick="showDiff()">Найти разность чисел</div>
+            <div class="message" onclick="showMult()">Найти произведение чисел</div>
+            <div class="message" onclick="showDiv()">Найти частное чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
         </main>
 
