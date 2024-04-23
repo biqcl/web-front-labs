@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png"> 
+        <script>
+            function Total() {
+                let price1 = 134;
+                let price2 = 329;
+                let price3 = 225;
+                let price4 = 149;
+                let price5 = 35;
+                
+                let quantity1 = document.getElementById("number1").value;
+                let quantity2 = document.getElementById("number2").value;
+                let quantity3 = document.getElementById("number3").value;
+                let quantity4 = document.getElementById("number4").value;
+                let quantity5 = document.getElementById("number5").value;
+                
+                let total = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3) + (price4 * quantity4) + (price5 * quantity5);
+                
+                let output = document.getElementById("output");
+
+                output.textContent = 'Итого: ' + total + ' руб';
+            }
+
+            function Clear() {
+                document.getElementById("number1").value = "";
+                document.getElementById("number2").value = "";
+                document.getElementById("number3").value = "";
+                document.getElementById("number4").value = "";
+                document.getElementById("number5").value = "";
+                document.getElementById("output").textContent = 'Итого:';
+            }
+        </script>
+        <style>
+            div {
+                display: inline-block;
+                width: 400px;
+                border: 7px double rgb(117, 130, 93);
+                border-radius: 30px;
+                padding: 10px;
+                margin: 10px;
+                background-color: rgba(174, 194, 137, 0.53);
+                color: rgb(205, 70, 98);
+                text-align: center;
+            }
+
+            .vegetable {
+                width: 300px;
+                border: 3px solid rgb(117, 130, 93);
+            }
+
+            #output {
+                width: 200px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+    
+        <main style="text-align: center;">
+            <div style="margin-bottom: 50px;">
+                <h1>Корзина товаров</h1>
+
+                <div class="vegetable">
+                    Огурцы (134 руб/кг):<br>
+                    <input type="number" min="0" oninput="value = Math.max(value, 0)" 
+                    placeholder="Введите нужное количество кг" id="number1" style="width: 220px;"><br>
+                </div>
+    
+                <div class="vegetable">
+                    Томаты (329 руб/кг):<br>
+                    <input type="number" min="0" oninput="value = Math.max(value, 0)" 
+                    placeholder="Введите нужное количество кг" id="number2" style="width: 220px;"><br>
+                </div>
+                
+                <div class="vegetable">
+                    Авокадо (225 руб/кг):<br>
+                    <input type="number" min="0" oninput="value = Math.max(value, 0)" 
+                    placeholder="Введите нужное количество кг" id="number3" style="width: 220px;"><br>
+                </div>
+                
+                <div class="vegetable">
+                    Болгарский перец (149 руб/кг):<br>
+                    <input type="number" min="0" oninput="value = Math.max(value, 0)" 
+                    placeholder="Введите нужное количество кг" id="number4" style="width: 220px;"><br>
+                </div>
+    
+                <div class="vegetable">
+                    Картофель (35 руб/кг):<br>
+                    <input type="number" min="0" oninput="value = Math.max(value, 0)" 
+                    placeholder="Введите нужное количество кг" id="number5" style="width: 220px;"><br>
+                </div>
+    
+                <input type="button" value="Рассчитать стоимость" onclick="Total()"><br>
+
+                <div id="output">Итого:</div><br>
+
+                <input type="button" value="Очистить" onclick="Clear()">
+            </div>
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
