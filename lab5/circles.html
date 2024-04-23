@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function Cover(circle) {
+                circle.style.width = "0";
+                circle.style.height = "0";
+                circle.style.opacity = "0";
+                circle.style.transition = "1s"
+            }  
+            
+            function resetCircles() {
+                var circles = document.querySelectorAll('.circle');
+                circles.forEach(circle => {
+                    circle.style.width = "100px";
+                    circle.style.height = "100px";
+                    circle.style.opacity = "1";
+                });
+            }
+        </script>
+        <style>
+            .circle {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 2px dotted lemonchiffon;
+                display: inline-block;
+                color: lemonchiffon;
+                font-size: 20px;
+                text-align: center;
+                line-height: 100px;                
+                position: absolute;
+                cursor: pointer;                
+                transition: width 0px, height 0px, opacity 0;
+            }    
+    
+            #reset {
+                cursor: pointer;                
+                padding: 15px;
+                border: 5px double cornflowerblue;
+                background-color: lavender;  
+                color: cornflowerblue;  
+                font-weight: bold;  
+                font-size: 12pt;         
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main>
+            <div class="circle" style="background-color: crimson; top: 150px; left: 1000px;" onclick="Cover(this)">1</div>
+            <div class="circle" style="background-color: orange; top: 330px; left: 200px;" onclick="Cover(this)">2</div>
+            <div class="circle" style="background-color: gold; top: 172px; left: 914px;" onclick="Cover(this)">3</div>
+            <div class="circle" style="background-color: greenyellow; top: 720px; left: 800px;" onclick="Cover(this)">4</div>
+            <div class="circle" style="background-color: green; top: 100px; left: 170px;" onclick="Cover(this)">5</div>
+            <div class="circle" style="background-color: lightskyblue; top: 130px; left: 740px;" onclick="Cover(this)">6</div>
+            <div class="circle" style="background-color: blue; top: 280px; left: 550px;" onclick="Cover(this)">7</div>
+            <div class="circle" style="background-color: indigo; top: 390px; left: 1000px;" onclick="Cover(this)">8</div>
+            <div class="circle" style="background-color: purple; top: 50px; left: 600px;" onclick="Cover(this)">9</div>
+            <div class="circle" style="background-color: palevioletred; top: 200px; left: 94px;" onclick="Cover(this)">10</div>
+    
+            <button id="reset" onclick="resetCircles()">Вернуть круги</button>    
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
