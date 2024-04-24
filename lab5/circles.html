@@ -10,18 +10,15 @@
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
         <script>
             function Cover(circle) {
-                circle.style.width = "0";
-                circle.style.height = "0";
-                circle.style.opacity = "0";
-                circle.style.transition = "1s";
+                circle.style.opacity = 0;
+                circle.style.transform = "scale(0)";
             }  
             
             function resetCircles() {
                 var circles = document.querySelectorAll('.circle');
                 circles.forEach(circle => {
-                    circle.style.width = "100px";
-                    circle.style.height = "100px";
                     circle.style.opacity = "1";
+                    circle.style.transform = 'scale(1)';
                 });
             }
         </script>
@@ -38,7 +35,7 @@
                 line-height: 100px;                
                 position: absolute;
                 cursor: pointer;                
-                transition: width 0px, height 0px, opacity 0;
+                transition: opacity 0.7s ease, transform 0.7s ease;
             }    
     
             #reset {

@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png"> 
         <script>
             function Total() {
-                let price1 = 134;
+                const price1 = 134;
                 let price2 = 329;
                 let price3 = 225;
                 let price4 = 149;
@@ -22,7 +22,8 @@
                 let quantity4 = document.getElementById("number4").value;
                 let quantity5 = document.getElementById("number5").value;
                 
-                let total = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3) + (price4 * quantity4) + (price5 * quantity5);
+                let total = (price1 * quantity1) + (price2 * quantity2) 
+                    + (price3 * quantity3) + (price4 * quantity4) + (price5 * quantity5);
                 
                 let output = document.getElementById("output");
 
