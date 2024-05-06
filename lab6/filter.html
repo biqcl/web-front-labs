@@ -5,22 +5,97 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <title>Бызова Мария Максимовна. Лабораторная 6</title>        
         <link rel="stylesheet" href="../main.css">
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value;
+                let type = document.getElementById('wear-type').value;
+                let wear = document.getElementById('wear');
+
+                if (color == 'Чёрный' && type == 'Футболка') {
+                    wear.src = 'black-tshirt.png';
+                }
+                else if (color == 'Чёрный' && type == 'Брюки') {
+                    wear.src = 'black-pants.png';
+                }
+                else if (color == 'Чёрный' && type == 'Ботинки') {
+                    wear.src = 'black-boots.png';
+                }
+                else if (color == 'Белый' && type == 'Футболка') {
+                    wear.src = 'white-tshirt.png';
+                }
+                else if (color == 'Белый' && type == 'Брюки') {
+                    wear.src = 'white-pants.png';
+                }
+                else if (color == 'Белый' && type == 'Ботинки') {
+                    wear.src = 'white-boots.png';
+                }
+                else if (color == 'Бежевый' && type == 'Футболка') {
+                    wear.src = 'beige-tshirt.png';
+                }
+                else if (color == 'Бежевый' && type == 'Брюки') {
+                    wear.src = 'pants-beige.png';
+                }
+                else if (color == 'Бежевый' && type == 'Ботинки') {
+                    wear.src = 'beige-boots.png';
+                }
+            }
+        </script>
+        <style>
+            button {
+                cursor: pointer;
+                background-color: rgb(205, 70, 98);
+                border: 1.5px solid rgb(75, 25, 35);
+                border-radius: 5px;
+                color: rgb(75, 25, 35); 
+            }
+            img {
+                height: 400px;
+            }
+            .border {
+                border: 5px double rgb(205, 70, 98);
+                border-radius: 50px;
+                color: rgb(205, 70, 98);
+                background-color: rgba(0, 0, 0, 0.251);
+                margin: 10px auto;
+                padding: 5px;
+                text-align: center;
+                width: 500px;
+            }
+        </style>
+
     </head>
 
     <body>
         <header>
-            НГТУ, ФБ, Лабораторная работа 5
+            НГТУ, ФБ, Лабораторная работа 6
         </header>
 
         <main>  
+            <div class="border">                
+                Цвет одежды:
+                <select id="wear-color">
+                    <option>Чёрный</option>
+                    <option>Белый</option>
+                    <option>Бежевый</option>
+                </select><br>
+                Тип одежды:
+                <select id="wear-type">
+                    <option>Футболка</option>
+                    <option>Брюки</option>
+                    <option>Ботинки</option>
+                </select><br>
+
+                <button onclick="filter()">Ok</button><br>
+
+                <img id="wear">
+            </div>
         </main>
 
         <footer>
             &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
-        </footer>
-        
+        </footer>        
     </body>
 </html>
