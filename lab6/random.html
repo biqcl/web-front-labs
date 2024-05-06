@@ -5,17 +5,104 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <title>Бызова Мария Максимовна. Лабораторная 6</title>        
         <link rel="stylesheet" href="../main.css">
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            let number;
+            let count = 0;
+            function startGame() {
+                number = Math.floor(Math.random() * 100) + 1;
+                let screens = document.getElementsByClassName('game');
+                screens[0].style.display = 'none';
+                screens[1].style.display = 'block';
+            }
+            function guess() {              
+                count++;
+                let input = document.getElementById('user-number');
+                let userNumber = parseInt(input.value);
+                let message = document.getElementById('result');
+                if(input.value == '') {
+                    message.innerHTML = 'Вы не ввели число';
+                    count--;                
+                }
+                else if(userNumber < 1) {
+                    message.innerHTML = 'Введите число бошльше 1';
+                    count--; 
+                }
+                else if(userNumber > 100) {
+                    message.innerHTML = 'Введите число меньше 100';
+                    count--;
+                }                
+                else if(userNumber > number) {
+                    message.innerHTML = 'Загаданное число меньше';
+                }
+                else if (userNumber < number) {
+                    message.innerHTML = 'Загаданное число больше';
+                }
+                else {
+                    let screens = document.getElementsByClassName('game');
+                    screens[1].style.display = 'none';
+                    screens[2].style.display = 'block';
+                    document.getElementById('number').innerHTML = number;
+                    document.getElementById('try-count').innerHTML = count;
+                }
+            }            
+            function again(params) {
+                let screens = document.getElementsByClassName('game');
+                screens[2].style.display = 'none';
+                screens[1].style.display = 'block';
+                number = Math.floor(Math.random() * 100) + 1;
+                document.getElementById('user-number').value = '';
+                document.getElementById('result').innerHTML = '';                
+            }
+        </script>
+        <style>
+            .game {
+                border: 5px double rgb(174, 194, 137);
+                border-radius: 50px;
+                background-color: rgba(102, 132, 94, 0.119);
+                margin: 10px auto;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
     </head>
 
     <body>
         <header>
-            НГТУ, ФБ, Лабораторная работа 5
+            НГТУ, ФБ, Лабораторная работа 6
         </header>
 
-        <main>  
+        <main> 
+            <div class="game">                
+                <button onclick="startGame()">
+                    Cыграть в игру
+                </button>
+            </div>
+
+            <div class="game" style="display: none;">
+                <h1>Угадай число!</h1>
+                <div>
+                    Задумано число от 1 до 100. Угадаете какое?<br>
+                    <input type="number" value="" min="1" max="100" id="user-number"><br>
+                    <button onclick="guess()">Угадать</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+
+            <div class="game" style="display: none;">
+                <h1>Поздравляем, вы выиграли!</h1>
+                <div>
+                    Задуманное число: <span id="number"></span>
+                </div>
+                <div>
+                    Количество попыток: <span id="try-count"></span>
+                </div>
+                <div>
+                    <button onclick="again()">Сыграть ещё раз</button>
+                </div>
+            </div>
         </main>
 
         <footer>
