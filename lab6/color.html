@@ -5,22 +5,68 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <title>Бызова Мария Максимовна. Лабораторная 6</title>        
         <link rel="stylesheet" href="../main.css">
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function changeColor(div) {
+                if (div.style.backgroundColor == 'rgba(173, 215, 177, 0.66)') {
+                    div.style.backgroundColor = 'rgba(255, 64, 64, 0.66)';
+                    document.getElementById('color-name').innerHTML = 'Красный';
+                    div.style.color = 'rgba(76, 19, 19, 0.8)';
+                }
+                else if (div.style.backgroundColor == 'rgba(255, 64, 64, 0.66)') {
+                    div.style.backgroundColor = 'rgba(104, 151, 187, 0.66)';
+                    document.getElementById('color-name').innerHTML = 'Голубой';
+                    div.style.color = 'rgba(31, 45, 56, 0.8)';
+                }
+                else if (div.style.backgroundColor == 'rgba(104, 151, 187, 0.66)') {
+                    div.style.backgroundColor = 'rgba(255, 145, 175, 0.66)';
+                    document.getElementById('color-name').innerHTML = 'Розовый';
+                    div.style.color = 'rgba(76, 43, 52, 0.8)';
+                }
+                else if (div.style.backgroundColor == 'rgba(255, 145, 175, 0.66)') {
+                    div.style.backgroundColor = 'rgba(213, 166, 224, 0.66)';
+                    document.getElementById('color-name').innerHTML = 'Лавандовый';
+                    div.style.color = 'rgb(106, 83, 112)';
+                }
+                else {
+                    div.style.backgroundColor = 'rgba(173, 215, 177, 0.66)';
+                    div.style.color = 'green';
+                    document.getElementById('color-name').innerHTML = 'Светло-зелёный';
+                }
+            }
+        </script>
+        <style>
+            .color {
+                cursor: grab;
+                border: 5px double;
+                border-radius: 30px;
+                background-color: rgba(173, 215, 177, 0.66);
+                color: green;
+                margin: 20px auto;
+                padding: 15px;                     
+                width: 40%;
+                text-align: center;
+                transition: 1.5s;
+            }
+        </style>
     </head>
 
     <body>
         <header>
-            НГТУ, ФБ, Лабораторная работа 5
+            НГТУ, ФБ, Лабораторная работа 6
         </header>
-
-        <main>  
+    
+        <main>
+            <div class="color" ondblclick="changeColor(this)">
+                Цвет: <span id="color-name">Светло-зелёный</span><br>
+                Сделайте двойной щелчок, чтобы изменить цвет
+            </div>
         </main>
 
         <footer>
             &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
-        </footer>
-        
+        </footer>        
     </body>
 </html>
