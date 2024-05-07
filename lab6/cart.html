@@ -5,17 +5,150 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Бызова Мария Максимовна. Лабораторная 5</title>        
+        <title>Бызова Мария Максимовна. Лабораторная 6</title>        
         <link rel="stylesheet" href="../main.css">
         <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function total() {
+                let inputMoney = document.getElementById('money').value;
+                let money = Math.max(inputMoney, 0);
+
+                const price1 = 90;
+                const price2 = 50;
+                const price3 = 150;
+                const price4 = 54;
+                const price5 = 169;
+                const price6 = 100;
+                const price7 = 80;
+
+                let quantity1 = document.getElementById("number1").value;
+                let quantity2 = document.getElementById("number2").value;
+                let quantity3 = document.getElementById("number3").value;
+                let quantity4 = document.getElementById("number4").value;
+                let quantity5 = document.getElementById("number5").value;
+                let quantity6 = document.getElementById("number6").value;
+                let quantity7 = document.getElementById("number7").value;
+
+                let total = (price1 * quantity1) + (price2 * quantity2) 
+                    + (price3 * quantity3) + (price4 * quantity4) + (price5 * quantity5);
+
+                let output = document.getElementById("output");
+                output.textContent = 'Итого: ' + total + ' руб';
+                
+                let message = document.getElementById('text');
+
+                if (money == '') {
+                    message.innerHTML = 'Какой у вас баланс?';
+                }
+                else if (money < total) {
+                    message.innerHTML = 'У вас недостаточно средств :(';
+                }
+                else if (quantity1 < 0 || quantity2 < 0 || quantity3 < 0 
+                    || quantity4 < 0 || quantity5 < 0 || quantity6 < 0 || quantity7 < 0) {
+                        message.innerHTML = 'Количество товара не может быть отрицательным';
+                }
+                else if (quantity1 == 0 && quantity2 == 0 && quantity3 == 0 && quantity4 == 0 && 
+                    quantity5 == 0 && quantity6 == 0 && quantity7 == 0) {
+                    message.innerHTML = 'Выберите хотя бы один товар';
+                }
+                else {
+                    message.innerHTML = 'Ваша покупка оформлена';
+                }
+            }
+        </script>
+        <style>
+            .cart {
+                margin: 10px;                
+                font-weight: normal;
+            }
+            .wallet {
+                margin: 10px;
+            }
+            button {
+                cursor: pointer;
+                background-color: rgba(174, 194, 137, 0.689);
+                border: 1.5px solid rgba(84, 94, 67, 0.674);
+                border-radius: 5px;
+                color: rgb(84, 94, 67);
+            }
+        </style>
     </head>
 
     <body>
         <header>
-            НГТУ, ФБ, Лабораторная работа 5
+            НГТУ, ФБ, Лабораторная работа 6
         </header>
 
-        <main>  
+        <main> 
+            <div class="cart">
+                <div>
+                    Мой баланс: 
+                    <input type="number" id="money" placeholder="Введите ваш бюджет" ><br>
+                </div>
+
+                <table border="1px">
+                    <tr style="font-weight: bold; text-align: center;">
+                        <td> </td>
+                        <td>Название</td>
+                        <td>Цена</td>
+                        <td>Количество</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Молоко</td>
+                        <td>90 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество" 
+                            id="number1" style="width: 190px;"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Хлеб белый</td>
+                        <td>50 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number2" style="width: 190px;"></td>
+                    </tr>       
+                    <tr>
+                        <td>3</td>
+                        <td>Масло сливочное, 200 гр</td>
+                        <td>150 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number3"style="width: 190px;"></td>
+                    </tr>  
+                    <tr>
+                        <td>4</td>
+                        <td>Йогурт</td>
+                        <td>54 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number4" style="width: 190px;"></td>
+                    </tr>  
+                    <tr>
+                        <td>5</td>
+                        <td>Томаты черри, 250 гр</td>
+                        <td>169 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number5" style="width: 190px;"></td>
+                    </tr>  
+                    <tr>
+                        <td>6</td>
+                        <td>Вафли</td>
+                        <td>100 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number6" style="width: 190px;"></td>
+                    </tr>  
+                    <tr>
+                        <td>7</td>
+                        <td>Джем</td>
+                        <td>80 р</td>
+                        <td><input type="number" min="0" placeholder="Введите нужное количество"
+                            id="number7" style="width: 190px;"></td>
+                    </tr>              
+                </table><br>
+
+                <button onclick="total()">Ok</button>  
+
+                <div id="output">Итого: </div>   
+                <div id="text"></div>           
+            </div>
         </main>
 
         <footer>
