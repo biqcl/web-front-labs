@@ -58,13 +58,14 @@
                 let main = document.querySelector('main');
                 for (let i = 10; i>=-80; i-=3) {
                     let newBlock = document.createElement('div');
-                    newBlock.style.backgroundColor = 'lavender';
-                    newBlock.style.height = '20px';
-                    newBlock.style.width = '20px';
+                    newBlock.style.backgroundColor = 'palevioletred';
+                    newBlock.style.height = '25px';
+                    newBlock.style.width = '25px';
                     newBlock.style.borderRadius = '50%';
                     newBlock.style.margin = ' 5px';
                     newBlock.style.border = '1.5px solid rgba(84, 94, 67, 0.674)';
                     newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '25px';
                     newBlock.style.display = 'inline-block';
                     
                     newBlock.innerHTML = `${i}`;
@@ -89,6 +90,34 @@
                     main.appendChild(newBlock);
                 }
             }
+
+            function addCircles() {
+                let numberOfCircles = document.getElementById('quantity1').value;
+                let main = document.querySelector('main');
+
+                for(let i = numberOfCircles; i>0; i--) {
+                    let newBlock = document.createElement('div');                    
+                    newBlock.style.width = '40px';
+                    newBlock.style.height = '40px';                    
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.margin = '5px';
+                    newBlock.style.border = '1.5px solid rgba(84, 94, 67, 0.674)';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '40px';
+                    newBlock.style.display = 'inline-block';             
+
+                    if (i % 2 == 0) {
+                        newBlock.style.backgroundColor = 'rgb(219, 112, 147)';
+                    } 
+                    else {
+                        newBlock.style.backgroundColor = 'rgb(133, 198, 155)';
+                    }
+                    newBlock.innerHTML = `${i}`;
+
+                    main.appendChild(newBlock);  
+                }
+
+            }
         </script>
         <style>
             div {
@@ -98,6 +127,7 @@
                 border: 3px dotted;
                 width: 30%;
                 background-color: rgba(84, 94, 67, 0.674);
+                color: rgb(146, 66, 92);
             }
             button {
                 cursor: pointer;
@@ -107,7 +137,6 @@
                 color: rgb(84, 94, 67);
                 margin: 5px;
             }
-
         </style>
     </head>
 
@@ -123,6 +152,8 @@
             <button onclick="add20_50()">20 => 50</button><br>
             <button onclick="add10_80()">10 => -80</button><br>
             <button onclick="addOpacity()">Полупрозрачные блоки</button><br>
+            <input type="number" placeholder="Введите количество кругов" min="0" id="quantity1" style="width: 190px;">
+            <button onclick="addCircles()">Лиловый/Зелёный</button><br>
         </main>
 
         <footer>
