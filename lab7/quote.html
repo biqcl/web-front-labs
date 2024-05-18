@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 7</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function showQuote() {
+                const date = [
+                    '03.05.2024', '06.05.2024', '07.05.2024', '08.05.2024', '10.05.2024', '13.05.2024', '14.05.2024', '15.05.2024', 
+                    '16.05.2024', '17.05.2024'];
+                const exchange = [
+                    1597.50, 1597.50, 1639.50, 1633.00, 1636.00, 1645.00, 1673.00, 1659.00, 1682.00, 1676.00
+                ];
+
+                let table = document.getElementById('quote-table');
+                for (let i = 0; i < exchange.length; i++) {
+                    let tr = document.createElement('tr');
+                    let tdD = document.createElement('td');
+                    let tdQ = document.createElement('td');
+                    let td = document.createElement('td');
+
+                    tdD.innerText = date[i];
+                    tdQ.innerText = exchange[i];
+                    tr.appendChild(tdD);
+                    tr.appendChild(tdQ);
+                    tr.appendChild(td);
+                    table.appendChild(tr);
+
+                    if (i > 0) {
+                        let diff = exchange[i] - exchange[i - 1];
+                        td.innerText = diff.toFixed(2);
+                    } 
+                    else {
+                        td.innerText = '';
+                    }
+                }
+
+                let sum = 0;
+                for (let i = 0; i <exchange.length; i++) {
+                    sum +=exchange[i];
+                }
+                let average = sum / exchange.length;
+                average = average.toFixed(2);
+                
+                let max = Math.max(...exchange);
+                let min = Math.min(...exchange);     
+
+                let detail = document.getElementById('detail');
+                detail.innerText = `Среднеее значение: $${average}
+                Максимальное значение: $${max} 
+                Минимальное значение: $${min}`; 
+                
+                let button = document.querySelector('button');
+                button.style.display = 'none';      
+            }
+        </script>
+        <style>
+            button {
+                cursor: pointer;
+                background-color: rgba(174, 194, 137, 0.689);
+                border: 1.5px solid rgba(84, 94, 67, 0.674);
+                border-radius: 5px;
+                color: rgb(84, 94, 67);
+                margin: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+        </header>
+
+        <main>  
+            <button onclick="showQuote()">Курс акций «Транснефть»</button>
+            <table border="1" id="quote-table"></table>
+            <div id="detail"></div>
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
