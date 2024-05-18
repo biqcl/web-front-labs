@@ -19,6 +19,40 @@
 
                 document.querySelector('main').appendChild(newBlock);
             }
+
+            function addNewBlocks() {
+                let numberOfBlocks = document.getElementById('quantity');
+                let blocks = parseInt(numberOfBlocks.value) || 0;
+                let main = document.querySelector('main');
+
+                for(let i = 0; i<blocks; i++) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'palevioletred';
+                    newBlock.style.height = '40px';
+                    newBlock.style.width = `${180 + i*40}px`;
+                    newBlock.style.margin = ' 15px auto';
+                    newBlock.style.border = '1.5px solid rgba(84, 94, 67, 0.674)';
+                    newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
+
+            function add20_50() {
+                let main = document.querySelector('main');
+                for (let i = 20; i<=50; i+=2.5) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'palevioletred';
+                    newBlock.style.height = '25px';
+                    newBlock.style.width = '30%';
+                    newBlock.style.margin = ' 15px auto';
+                    newBlock.style.border = '1.5px solid rgba(84, 94, 67, 0.674)';
+                    
+                    newBlock.innerHTML = `${i}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
         </script>
         <style>
             div {
@@ -35,6 +69,7 @@
                 border: 1.5px solid rgba(84, 94, 67, 0.674);
                 border-radius: 5px;
                 color: rgb(84, 94, 67);
+                margin: 5px;
             }
 
         </style>
@@ -46,7 +81,10 @@
         </header>
 
         <main> 
-            <button onclick="addNewBlock">Добавить блок</button>
+            <button onclick="addNewBlock()">Добавить блок</button><br>
+            <input type="number" placeholder="Введите количество блоков" min="0" id="quantity" style="width: 190px;">
+            <button onclick="addNewBlocks()">Добавить блоки</button><br>
+            <button onclick="add20_50()">20 => 50</button>
         </main>
 
         <footer>
