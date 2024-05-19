@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 7</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function getEuroExchangeRate() {
+                const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+                fetch(url)
+                    .then(response => response.json())
+                    .then(json => {
+                        const date = json.Date;
+                        const prevDate = json.PreviousDate;
+
+                        const currentRate = json.Valute.EUR.Value;
+                        const prevRate = json.Valute.EUR.Previous;
+                        const diff = (currentRate - prevRate).toFixed(2);
+                        let rate = "";
+                        if (diff > 0) {
+                            rate = `Курс поднялся на ${Math.abs(diff)}₽`;
+                        } else if (diff < 0) {
+                            rate = `Курс опустился на ${Math.abs(diff)}₽`;
+                        } else {
+                            rate = "Курс не изменился";
+                        }
+
+                        document.getElementById('rate').textContent = `Текущий курс евро: ${currentRate.toFixed(2)}₽`;
+                        document.getElementById('date').textContent = `Дата запроса: ${date}`;
+                        document.getElementById('prevRate').textContent = `Курс за прошлую дату: ${prevRate.toFixed(2)}₽`;
+                        document.getElementById('diff').textContent = rate;
+                        document.getElementById('link').style.display = 'block';
+                    })
+            }
+        </script>
+        <style>
+            button {
+                cursor: pointer;
+                background-color: rgba(174, 194, 137, 0.689);
+                border: 1.5px solid rgba(84, 94, 67, 0.674);
+                border-radius: 5px;
+                color: rgb(84, 94, 67);
+                margin: 5px;
+            }
+            .details {
+                background-color: rgb(244,219,219);
+                border: 5px dotted rgb(205,70,98);
+                border-radius: 25px;
+                text-align: center;
+                margin: 5px auto;
+                padding: 10px;
+                width: 80%;
+                color: rgb(205,70,98);
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+        </header>
+
+        <main> 
+            <div class="details">
+                <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+                <div id="rate"></div>
+                <div id="date"></div>
+                <div id="prevRate"></div>
+                <div id="diff"></div>
+                <div id="link" style="display:none;">
+                    <a href="https://www.cbr-xml-daily.ru/" style="font-weight: bold; font-size: 12pt;
+                        color: rgb(174, 194, 137);">Источник данных</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
