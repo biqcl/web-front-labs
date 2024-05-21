@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 7</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script>
+            function getWeather() {
+                const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezoe=Asia%2FBangkok';
+                fetch(url)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        const at8am = json.hourly.temperature_2m[8];
+                        const at12pm =json.hourly.temperature_2m[12];
+                        const at8pm = json.hourly.temperature_2m[20];
+
+                        document.getElementById("at8am").innerText = `Температура в 8 утра: ${at8am}°C`;
+                        document.getElementById("at12pm").innerText = `Температура в 12 дня: ${at12pm}°C`;
+                        document.getElementById("at8pm").innerText = `Температура в 8 вечера: ${at8pm}°C`;
+                        
+                    })
+            } 
+        </script>
+        <style>
+            button {
+                cursor: pointer;
+                background-color: rgba(174, 194, 137, 0.689);
+                border: 1.5px solid rgba(84, 94, 67, 0.674);
+                border-radius: 5px;
+                color: rgb(84, 94, 67);
+                margin: 5px;
+            }
+            .weather {
+                background-color: rgb(244,219,219);
+                border: 5px dotted rgb(205,70,98);
+                border-radius: 25px;
+                text-align: center;
+                margin: 5px auto;
+                padding: 10px;
+                width: 80%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+        </header>
+
+        <main> 
+            <div class="weather">
+                <button onclick="getWeather()">Узнать погоду в Новосибирске</button>                
+                <div id="at8am"></div>
+                <div id="at12pm"></div>
+                <div id="at8pm"></div>
+            </div>
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>
+        
+    </body>
+</html>
