@@ -48,6 +48,16 @@ a {
     font-family: Arial;
     font-size: 13px;
 }
+button {
+    background-color: #a3c0dd;
+    border-color: #3e648B;
+    border-style: double;
+    border-radius: 25%;
+    text-align: center;
+    position: relative;
+    bottom: -5px;
+    margin: 8px;
+}
 footer {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -58,18 +68,19 @@ footer {
     margin: 0 auto;  
     text-align: center;
     padding-right: 20px;
-    line-height: 28px; 
     font-weight: bold;   
     position: fixed;
     bottom: 0px;
     right: 0px;
     left: 0px;
 }
-/* footer:hover {
+footer:hover {
     opacity: 1;
-    height: 50px;
+    height: 70px;    
+    text-align: center;
+    line-height: 80px;
     transition: 1s;
-} */
+}
 
 .img {
     position: relative;
