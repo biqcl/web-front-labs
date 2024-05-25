@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>isbnk.org - Межгосударственный банк</title>        
+        <link rel="stylesheet" href="../project.css">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <script>            
+            function wheresNews(number) {
+                let screens = document.querySelectorAll('#card' + number);
+                if (screens[0].style.display === 'block') {
+                    screens[0].style.display = 'none';
+                    screens[1].style.display = 'block';
+                } 
+                else {
+                    screens[0].style.display = 'block';
+                    screens[1].style.display = 'none';
+                }
+            }
+        </script>
+        <style>
+            .news {
+                left: 135px;
+                width: 970px;
+                height: 20px;
+                margin: 0 auto;
+            }           
+            .figure {
+                height: 34px;
+                width: 950px;
+                margin: 0 auto;
+                border-radius: 15px;
+                background: linear-gradient(rgb(210,219,228), 30%, rgb(62,100,139)); 
+                margin-top: 30px;  
+                margin-bottom: 30px; 
+                color: #FFFFFF;
+                font-size: 14px;  
+                padding-left: 30px;  
+                line-height: 34px;  
+            }                
+            .news-card {
+                display: inline-block;
+                width: 245px;
+                border-radius: 20px;
+                background: linear-gradient(rgb(210, 219, 228), 30%, rgba(62, 100, 139, 0.911));
+                padding: 0.5px 25px 15px;
+                margin-bottom: 30px;
+            } 
+            button {
+                border: none;
+                background-color: #b5bfd100;
+                color: #FFFFFF;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .intro {
+                font-size: 11px;
+                font-weight: normal;
+                color: #B5BFD1;
+            }
+            #card1, #card2, #card3, 
+            #card4, #card5, #card6, 
+            #card7, #card8, #card9, 
+            #card10 {
+                font-size: 13px;
+                color: #FFFFFF;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            &#8657; &#8195; &#9993; &#8195; &#8801; &#8195; Ru | En
+        </header>
+
+        <main>
+            <div>                 
+                <div class="img">
+                    <img src="https://www.isbnk.org/images/logo-ru.png" height="80px" 
+                        style="margin-top: 11px; margin-bottom: 11px;"><br>
+                    <img src="https://www.isbnk.org/images/title-pic-4-ru.jpg" height="246px">
+                </div>
+                
+                <div class="contents">
+                    <p class="contact">РАСЧЕТНЫЙ ЦЕНТР:</p>
+                    <p class="number">+7 (495) 745-2336</p>
+                    <p class="contact">ОТДЕЛ ФИНАНСОВЫХ ИНСТИТУТОВ:</p>
+                    <p class="number">+7 (495) 745-2351</p>
+                    <p class="contact">ОТДЕЛ ФИНАНСОВЫХ РЫНКОВ:</p>
+                    <p class="number">+7 (495) 228-3095</p>
+                    <p class="contact">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА:</p>
+                    <p class="number">+7 (495) 745-2262</p>
+                </div>                
+                
+                <div class="news">
+                    <div class="figure"><u>Главная страница</u> • <u>Новости</u></div>
+                    <h1>НОВОСТИ &#128506;</h1> 
+
+                    <div class="news-card">
+                        <h3>27.04.2024</h3>
+                        <h2>Совет Межгосударственного банка в 2024 году</h2>
+                        <p class="intro">
+                            Состоялось заседание Совета Межгосударственного банка
+                        </p>  
+                        <div style="display: none;" id="card1">
+                            22 апреля 2024 года состоялся Совет Межгосударственного банка. 
+                            Совет принял отставку Президента Банка Липина А.С. и назначил временно исполняющим 
+                            обязанности Президента Банка с 23 апреля 2024 года Бакулина А.В., заместителя Президента Банка.
+                        </div>   
+                        <button onclick="wheresNews(1)">Показать/скрыть новость</button>                    
+                    </div>
+                    
+                    <div class="news-card" style="margin-left: 30px; margin-right: 30px;">
+                        <h3>12.02.2024</h3>
+                        <h2>Обновление данных</h2>
+                        <p class="intro">
+                            Обновление статистических данных
+                        </p>  
+                        <div style="display: none;" id="card2">
+                            На Информационном портале Межгосударственного банка 
+                            www.isbnk.info обновлены статистические данные по различным показателям.
+                        </div>   
+                        <button onclick="wheresNews(2)">Показать/скрыть новость</button>                     
+                    </div>   
+
+                    <div class="news-card">
+                        <h3>23.03.2023</h3>
+                        <h2>Пресс-релиз</h2>
+                        <p class="intro">
+                            Рейтинговое агентство АКРА подтвердило кредитные рейтинги
+                        </p>  
+                        <div style="display: none;" id="card3">
+                            Рейтинговое агентство АКРА подтвердило кредитные рейтинги Межгосударственного 
+                            банка по международной шкале на уровне BBB+, прогноз «стабильный», по национальной 
+                            шкале — AA+(RU), прогноз «стабильный».
+                        </div>   
+                        <button onclick="wheresNews(3)">Показать/скрыть новость</button>                    
+                    </div>
+                    
+                    <div class="news-card">
+                        <h3>20.03.2023</h3>
+                        <h2>Секция "Миссия институтов развития в повестке СНГ, ЕАЭС, ШОС, БРИКС".</h2>
+                        <p class="intro">
+                            17 марта в рамках МЭФ СНГ 2023 была проведена секция
+                        </p>  
+                        <div style="display: none;" id="card4">
+                            17 марта в рамках МЭФ СНГ 2023 была проведена секция "Миссия институтов 
+                            развития в повестке СНГ, ЕАЭС, ШОС, БРИКС". В секции принял участие 
+                            Вице-президент Межгосударственного банка Чумаковский И.О., выступив с докладом на тему 
+                            "Модель Межгосударственного банка в развитии интеграции на Евразийском пространстве: 
+                            международные расчеты, рынки национальных валют".
+                        </div>   
+                        <button onclick="wheresNews(4)">Показать/скрыть новость</button>                     
+                    </div>
+
+                    <div class="news-card" style="margin-left: 30px; margin-right: 30px;">
+                        <h3>13.03.2023</h3>
+                        <h2>Заседание Экономического совета СНГ</h2>
+                        <p class="intro">
+                            17 марта 2023 года состоялось 97-е заседание
+                        </p>  
+                        <div style="display: none;" id="card5">
+                            17 марта 2023 года состоялось 97-е заседание Экономического совета СНГ, 
+                            в ходе которого рассмотрен широкий круг вопросов экономического сотрудничества 
+                            государств-участников СНГ. В заседании принял участие Президент Межгосударственного 
+                            банка Гаврилов Н.В.
+                        </div>   
+                        <button onclick="wheresNews(5)">Показать/скрыть новость</button>                    
+                    </div>
+                    
+                    <div class="news-card">
+                        <h3>07.03.2023</h3>
+                        <h2>Секция (круглый стол)
+                            «Тенденции развития региональных платёжных систем и операций с национальными валютами»
+                        </h2>
+                        <p class="intro">
+                            17 марта 2023 года в г. Москве запланировано проведение Международного экономического форума 
+                            государств
+                        </p>  
+                        <div style="display: none;" id="card6">
+                            17 марта 2023 года в г. Москве запланировано проведение Международного экономического форума 
+                            государств – участников СНГ «Диалог интеграций: СНГ, ЕАЭС, ШОС, БРИКС».<br>
+                            В рамках форума Межгосударственный банк проводит расширенное заседание секции 
+                            (круглый стол) на тему: «Тенденции развития региональных платёжных систем и операций с 
+                            национальными валютами: мировой опыт versus лучшие практики стран СНГ».<br>
+                            Программа мероприятия Межгосударственного банка предусматривает участие специалистов 
+                            центральных (национальных) банков Республики Армения, Республики Беларусь, 
+                            Российской Федерации, ведущих научно-экспертных организаций, а также представителей 
+                            дипломатического корпуса, предпринимательских кругов и бизнесменов.
+                        </div>   
+                        <button onclick="wheresNews(6)">Показать/скрыть новость</button>                     
+                    </div>
+
+                    <div class="news-card">
+                        <h3>19.12.2022</h3>
+                        <h2>Hовый Тарифный сборник</h2>
+                        <p class="intro">
+                            С 16 января 2023 года вводится в действие
+                        </p>  
+                        <div style="display: none;" id="card7">
+                            С 16 января 2023 года вводится в действие новый Тарифный сборник Межгосударственного банка.
+                        </div>   
+                        <button onclick="wheresNews(7)">Показать/скрыть новость</button>                    
+                    </div>
+                    
+                    <div class="news-card" style="margin-left: 30px; margin-right: 30px;">
+                        <h3>06.12.2022</h3>
+                        <h2>Заседание Экономического совета СНГ</h2>
+                        <p class="intro">
+                            2 декабря 2022 года состоялось 96-е заседание
+
+                        </p>  
+                        <div style="display: none;" id="card8" >
+                            2 декабря 2022 года состоялось 96-е заседание Экономического совета СНГ, в ходе 
+                            которого рассмотрен широкий круг вопросов экономического сотрудничества государств – 
+                            участников СНГ.<br>
+                            В заседании принял участие Вице-президент Межгосударственного банка Чумаковский И.О.<br>
+                            Следующее заседание Экономического совета СНГ планируется провести 17 марта 2023 года в Москве.<br>
+                        </div>   
+                        <button onclick="wheresNews(8)">Показать/скрыть новость</button>                     
+                    </div>   
+
+                    <div class="news-card">
+                        <h3>14.11.2022</h3>
+                        <h2>Заседание Комитета РСПП по финансовой политике</h2>
+                        <p class="intro">
+                            11 ноября 2022 года в г. Москве прошло заседание
+                        </p>  
+                        <div style="display: none;" id="card9">
+                            11 ноября 2022 года в г. Москве прошло заседание Комитета РСПП по финансовой политике. 
+                            Тема заседания - «Стратегические направления финансовой политики и развития финансовых 
+                            рынков: учет позиции бизнеса».<br>
+                            В дискуссии принял участие Вице-президент Межгосударственного банка И.О. Чумаковский 
+                            с тезисами о цифровых валютах центральных банков и цифровых финансовых активах.
+                        </div>   
+                        <button onclick="wheresNews(9)">Показать/скрыть новость</button>                    
+                    </div>
+                    
+                    <div class="news-card">
+                        <h3>01.11.2022</h3>
+                        <h2>Заседание Российско-Таджикского делового совета</h2>
+                        <p class="intro">
+                            Вице-президент Межгосударственного банка
+                        </p>  
+                        <div style="display: none;" id="card10">
+                            <img src="https://www.isbnk.org/upload/Image/RosTaj_011122.jpeg" width="230" style="text-align: center;">  
+                            Вице-президент Межгосударственного банка И.О. Чумаковский принял участие 
+                            в организационном заседании Российско-Таджикского делового совета, состоявшемся
+                            в г. Москва 1 ноября 2022 года.<br>
+                            На заседании совета были представлены основные направления работы совета, 
+                            выбран председатель и утвержден исполнительный директор, а также утвержден план 
+                            работы на 2022 год.
+                        </div>   
+                        <button onclick="wheresNews(10)">Показать/скрыть новость</button>                     
+                    </div>
+                                        
+                    
+
+
+
+
+
+
+
+                </div>
+
+                
+
+                
+            </div>  <br>&nbsp;<br>   
+        </main>
+
+        <footer style=" text-align: center;">
+            <div>
+                <button class="menu"><a href="aboutCompany.html"><img src="img/businessman_2564728.png" height="35px"></a></button>
+                <button class="menu"><a href="news.html"><img src="img/marketing_16044374.png" height="35px"></a></button>
+                <button class="menu"><a href="course.html"><img src="img/exchange-rate_13149421.png" height="35px"></a></button>
+                <button class="menu"><a href="contacts.html"><img src="img/contact_8009498.png" height="35px"></a></button>
+                <button class="menu"><a href="video.html"><img src="img/video-player_11344631.png" height="35px"></a></button>
+            </div>
+        </footer>        
+    </body>
+</html>
