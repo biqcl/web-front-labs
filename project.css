@@ -38,9 +38,9 @@ h2 {
     font-size: 16px;
 }
 h3 {
-    color: #9998B1;
+    color: #FFFFFF;
     font-family: Arial;
-    font-size: 12px;
+    font-size: 11px;
 }
 a {
     color: #3e648B;   
@@ -48,7 +48,7 @@ a {
     font-family: Arial;
     font-size: 13px;
 }
-button {
+.menu {
     background-color: #a3c0dd;
     border-color: #3e648B;
     border-style: double;
@@ -74,13 +74,13 @@ footer {
     right: 0px;
     left: 0px;
 }
-footer:hover {
+/* footer:hover {
     opacity: 1;
     height: 70px;    
     text-align: center;
     line-height: 80px;
     transition: 1s;
-}
+} */
 
 .img {
     position: relative;
