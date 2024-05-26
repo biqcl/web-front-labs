@@ -49,19 +49,19 @@ a {
     font-size: 13px;
 }
 .menu {
-    background-color: #a3c0dd;
-    border-color: #3e648B;
-    border-style: double;
+    background-color: #FFFFFF;
+    border: 1.5px solid #3e648B;
     border-radius: 25%;
     text-align: center;
     position: relative;
     bottom: -5px;
     margin: 8px;
+    padding: 3px 5px 2px;
 }
 footer {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    width: 950px;
+    width: 970px;
     height: 28px;
     background:linear-gradient(rgb(174,190,206) 50%, #3e648B 50%);
     opacity: 50%;
@@ -74,13 +74,13 @@ footer {
     right: 0px;
     left: 0px;
 }
-/* footer:hover {
+footer:hover {
     opacity: 1;
     height: 70px;    
     text-align: center;
     line-height: 80px;
     transition: 1s;
-} */
+}
 
 .img {
     position: relative;
@@ -110,5 +110,3 @@ footer {
     font-family: Arial;
     margin: 0px 0px 5px;
 }
-
-
