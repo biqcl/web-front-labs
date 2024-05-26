@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>isbnk.org - Межгосударственный банк</title>        
+        <link rel="stylesheet" href="../project.css">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <script>            
+            function getEGPRate() {
+                const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+                fetch(url)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        const date = json.Date;
+                        const rate = json.Valute.EGP.Value;
+                        let nominal = json.Valute.EGP.Nominal;
+
+                        let sum = document.getElementById('sum').value;
+                        let from = document.getElementById('from').value;
+                        let to = document.getElementById('to').value;
+                        let result = document.getElementById('result');
+
+                        if (from == 'EGP' && to == 'RUB') {
+                            let output = (sum * rate) / nominal;
+                            result.innerText = output.toFixed(2) + ' ₽';
+                        } 
+                        else if (from == 'RUB' && to == 'EGP') {
+                            let output = (sum / rate) * nominal;
+                            result.innerText = output.toFixed(2) + ' E£';
+                        } 
+                        else {
+                            result.innerText = 'Вы выбрали одну и ту же валюту, измените настройки';
+                        }                        
+
+                        document.getElementById('date').textContent = `Сегодняшняя дата: ${date}`;
+                        document.getElementById('rate').textContent = `Текущий курс EGP: ${rate.toFixed(2)}₽`;                        
+                        document.getElementById('link').style.display = 'block';
+                    })
+            }
+        </script>
+        <style>
+            .course {
+                left: 135px;
+                width: 970px;
+                height: 20px;
+                margin: 0 auto;
+            }    
+            .figure {
+                height: 34px;
+                width: 950px;
+                margin: 0 auto;
+                border-radius: 15px;
+                background: linear-gradient(rgb(210,219,228), 30%, rgb(62,100,139)); 
+                margin-top: 30px;  
+                margin-bottom: 30px; 
+                color: #FFFFFF;
+                font-size: 14px;  
+                padding-left: 30px;  
+                line-height: 34px;     
+            }   
+            .egpRate {
+                border-radius: 20px;
+                width: 950px;
+                padding: 15px;
+                border-left: 2px solid rgb(168, 209, 249);
+                border-right: 2px solid rgb(62,100,139);
+                background-image: linear-gradient(45deg, rgb(168, 209, 249), rgb(62,100,139)), 
+                    linear-gradient(45deg, rgb(168, 209, 249), rgb(62,100,139));
+                background-size: 100% 2px;
+                background-position: 0 0, 0 100%;
+                background-repeat: no-repeat;
+                text-align: center;  
+            }   
+            button {
+                cursor: pointer;
+                background-color: rgba(62, 100, 139, 0.1);
+                border: 1.5px solid rgb(62,100,139);
+                border-radius: 5px;
+                color: rgb(62,100,139);
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }      
+            p {
+                margin-bottom: 5px;
+            }            
+        </style>
+    </head>
+
+    <body>
+        <header>
+           &#8657; &#8195; &#9993; &#8195; &#8801; &#8195; Ru | En
+        </header>
+
+        <main>                 
+            <div class="img">
+                <img src="https://www.isbnk.org/images/logo-ru.png" height="80px" 
+                    style="margin-top: 11px; margin-bottom: 11px;"><br>
+            </div>
+            
+            <div class="contents">
+                <p class="contact">РАСЧЕТНЫЙ ЦЕНТР:</p>
+                <p class="number">+7 (495) 745-2336</p>
+                <p class="contact">ОТДЕЛ ФИНАНСОВЫХ ИНСТИТУТОВ:</p>
+                <p class="number">+7 (495) 745-2351</p>
+                <p class="contact">ОТДЕЛ ФИНАНСОВЫХ РЫНКОВ:</p>
+                <p class="number">+7 (495) 228-3095</p>
+                <p class="contact">ТЕХНИЧЕСКАЯ ПОДДЕРЖКА:</p>
+                <p class="number">+7 (495) 745-2262</p>
+            </div>  
+            
+            <div class="course">
+                <div class="figure"><u>Главная страница</u> • <u>Kалькулятор валют</u></div>
+                <h1>КАЛЬКУЛЯТОР ВАЛЮТ &sum;</h1>
+                <div class="egpRate">
+                    <button onclick="getEGPRate()">Получить курс EGP E£</button>
+                    <div id="date"></div>
+                    <div id="rate"></div> 
+                </div>
+
+                <div class="calc">
+                    <p>Введите сумму, которую необходимо перевести в другую валюту:</p>
+                    <input type="number" id="sum" min="0" oninput="value = Math.max(value, 0)" placeholder="Введите сумму"><br>
+
+                    <p>Перевести из:</p>
+                    <select id="from">
+                        <option value="RUB">Российский рубль</option>
+                        <option value="EGP">Египетский фунт</option>
+                    </select><br>
+
+                    <p>Перевести в:</p>
+                    <select id="to">
+                        <option value="EGP">Египетский фунт</option>
+                        <option value="RUB">Российский рубль</option>
+                    </select><br>
+
+                    <button onclick="getEGPRate()">Посчитать</button>
+
+                    <p id="result">Итог:</p>
+
+                    <a href="https://www.cbr-xml-daily.ru/" style="font-weight: bold; font-size: 12pt;
+                            color: #B5BFD1;">Источник</a> 
+                </div><br><br>
+            </div>        
+       </main>
+
+        <footer style=" text-align: center;">
+            <div>
+                <button class="menu"><a href="aboutCompany.html"><img src="img/businessman_2564728.png" height="35px"></a></button>
+                <button class="menu"><a href="news.html"><img src="img/marketing_16044374.png" height="35px"></a></button>
+                <button class="menu"><a href="course.html"><img src="img/exchange-rate_13149421.png" height="35px"></a></button>
+                <button class="menu"><a href="contacts.html"><img src="img/contact_8009498.png" height="35px"></a></button>
+                <button class="menu"><a href="video.html"><img src="img/video-player_11344631.png" height="35px"></a></button>
+            </div>
+        </footer>        
+    </body>
+</html>
