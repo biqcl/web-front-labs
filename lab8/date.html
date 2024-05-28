@@ -11,6 +11,14 @@
         <script src="lab8.js"></script>
     </head>
     <style>
+        button {
+            cursor: pointer;
+            background-color: rgba(174, 194, 137, 0.689);
+            border: 1.5px solid rgba(84, 94, 67, 0.674);
+            border-radius: 5px;
+            color: rgb(84, 94, 67);
+            margin: 5px;
+        }
         #current-date {
             margin: 30px auto;
             width: 50%;
@@ -25,6 +33,16 @@
             border: 3px solid salmon;
             border-radius: 10%;
             font-weight: normal;
+            display: inline-block;
+        }
+        .weekday {
+            width: 700px;
+            margin: auto;
+            text-align: center;
+            display: inline-block;
+        }
+        #dayIn, #monthIn, #yearIn {
+            width: 150px;
         }
     </style>
 
@@ -37,7 +55,13 @@
             <div id='current-date'></div>
             <div id='date-today'></div>
 
-            
+            <div class="weekday">
+                <input type="number" id="dayIn" min="1" max="31" placeholder="Введите день">
+                <input type="number" id="monthIn" min="1" max="12" placeholder="Введите месяц">
+                <input type="number" id="yearIn" min="1700" max="2100" placeholder="Введите год">
+                <button onclick="showWeekday()">Узнать день недели</button>
+                <div id="weekDay"></div>
+            </div>      
         </main>
 
         <footer>
