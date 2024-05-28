@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Бызова Мария Максимовна. Лабораторная 8</title>        
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicons/dinosaur_4615761.png">
+        <script src="get-days-count.js"></script>
+        <style>
+            button {
+            cursor: pointer;
+            background-color: rgba(174, 194, 137, 0.689);
+            border: 1.5px solid rgba(84, 94, 67, 0.674);
+            border-radius: 5px;
+            color: rgb(84, 94, 67);
+            margin: 5px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 8
+        </header>
+
+        <main>             
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>  
+                <button onclick="clearInput()">Очистить</button>                  
+            </div>  
+            
+            <div id='days'></div>            
+        </main>
+
+        <footer>
+            &copy; Бызова Мария, ФБИ-22, 2 курс, 2024
+        </footer>        
+    </body>
+</html>
