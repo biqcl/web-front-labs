@@ -11,9 +11,35 @@
         <script src="time.js"></script>
         <style>
             #time {
-                text-align: center;
-                font-size: 24px;
+                text-align: right;
+                font-size: 20px;
                 font-weight: bold;
+            }
+
+            #seconds {
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 50px;
+            }
+            .clock {
+                width: 250px;
+                height: 250px;
+                border: 7px dashed;
+                border-radius: 50px;
+                position: relative;
+                margin: 5% auto;                
+            }
+            #clockwise {
+                width: 130px;
+                height: 5px;
+                background: rgb(205, 70, 98);
+                position: absolute;
+                top: 50%;
+                transform-origin: 100%;
+                transform: rotate(360deg);
+                transition: transform 0.5s ease-in-out;
             }
         </style>
     </head>
@@ -24,9 +50,11 @@
             <div id="time">00:00:00</div>
         </header>
 
-        <main> 
-           
-          
+        <main>            
+            <div id="seconds"></div>
+            <div class="clock">
+                <div id="clockwise"></div>
+            </div>
         </main>
 
         <footer>
