@@ -7,7 +7,7 @@ function showTime() {
     const secondsDisplay = document.getElementById('seconds');
     const clockWise = document.getElementById('clockwise');
    
-    secondsDisplay.innerHTML = seconds.toString().padStart(2, '0');
+    secondsDisplay.innerHTML = seconds;
    
     const secondsDegree = ((seconds / 60) * 360) + 90; 
     clockWise.style.transform = `rotate(${secondsDegree}deg)`;
